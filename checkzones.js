@@ -1,6 +1,7 @@
 var errors = {
   "mediainfo" : "Couldn't parse mediainfo. Check that it is a valid video mediainfo which contains zones.",
   "frames" : "Please check that the frame count you entered is correct, and the mediainfo is valid.",
+  "high" : "One of the frames you inputted was either too high or too low.",
   "check" : "Could not parse the list of frames to check. Please check it.",
   "unknown" : "An unknown error occured.",
 };
@@ -92,6 +93,9 @@ function checkZones(mediainfo, numframes, check) {
   };
   for (var i = 0; i < to_check.length; i++) {
     var frame = to_check[i];
+    if (!frames[frame]) {
+      return errors["high"];
+    }
     results["frames"][frame] = frames[frame][0] + "=" + frames[frame][1];
   }
 
