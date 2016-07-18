@@ -1,0 +1,21 @@
+.container {
+  padding-top: 20px;
+}
+
+html, body, .container, .col-md-6 {
+  height: 100%;
+}
+
+#mediainfo {
+  height: calc(100% - 54px);
+}
+
+#frames, #check {
+  width: calc(50% - 1px);
+  display: inline;
+}
+
+#results {
+  height: calc(100% - 20px);
+  background-color: white;
+}

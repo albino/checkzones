@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf8">
+    <link rel="stylesheet" href="bootstrap.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="checkzones.css" type="text/css">
+    <title>
+      Zone checker
+    </title>
+  </head>
+  <body>
+    <!--
+      Mediainfo zone checker by albino
+      https://neetco.de/albino/checkzones
+    -->
+    <div class="container">
+      <div class="col-md-6">
+        <textarea id="mediainfo" placeholder="Paste your mediainfo here..." class="form-control" onchange="update();" onpaste="update();" onkeyup="update();"></textarea>
+        <input type="number" class="form-control" id="frames" placeholder="Number of frames" onchange="update();" onpaste="update();" onkeyup="update();"><input type="text" class="form-control" id="check" placeholder="Frames to check (comma separated)" onchange="update();" onpaste="update();" onkeyup="update();">
+      </div>
+      <div class="col-md-6">
+        <textarea id="results" placeholder="Results..." readonly class="form-control"></textarea>
+      </div>
+    </div>
+    <script src="checkzones.js" type="text/javascript"></script>
+  </body>
+</html>
