@@ -2,7 +2,7 @@ var errors = {
   "mediainfo" : "Couldn't parse mediainfo. Check that it is a valid video mediainfo which contains zones.",
   "frames" : "Please check that the frame count you entered is correct, and the mediainfo is valid.",
   "high" : "One of the frames you inputted was either too high or too low.",
-  "check" : "Could not parse the list of frames to check. Please check it.",
+  "check" : "Please enter a valid, comma-separated list of frames to check, without spaces.",
   "crash" : "Stupidly large frame numbers can crash your browser.",
   "unknown" : "An unknown error occured.",
 };
