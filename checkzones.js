@@ -134,13 +134,7 @@ function checkZones(mediainfo, numframes, check) {
   );
 
   // Build report
-  var output;
-  if (base[0] === "crf") {
-    output = "Base CRF: " + base[1];
-  } else if (base[0] === "bitrate") {
-    output = "Base bitrate: " + base[0];
-  }
-  output += "\n\n";
+  var output = "Base " + base[0] + ": " + base[1] + "\n\n";
 
   for (var frame in results["frames"]) {
     if (!results["frames"].hasOwnProperty(frame)) continue;
