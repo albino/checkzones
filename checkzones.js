@@ -3,6 +3,7 @@ var errors = {
   "frames" : "Please check that the frame count you entered is correct, and the mediainfo is valid.",
   "high" : "One of the frames you inputted was either too high or too low.",
   "check" : "Could not parse the list of frames to check. Please check it.",
+  "crash" : "Stupidly large frame numbers can crash your browser.",
   "unknown" : "An unknown error occured.",
 };
 
@@ -46,6 +47,11 @@ function parseZones(zones, base, numframes) {
 };
 
 function checkZones(mediainfo, numframes, check) {
+  // Check number of frames
+  if (numframes > 1000000) {
+    return errors["crash"];
+  }
+
   // Extract encode settings
   var lines = mediainfo.split('\n');
   var settings;
