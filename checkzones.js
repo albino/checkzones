@@ -161,5 +161,9 @@ function update() {
   var frames = document.getElementById("frames").value;
   var check = document.getElementById("check").value;
 
-  document.getElementById("results").value = checkZones(mediainfo, frames, check);
+  if (mediainfo && frames && check) {
+    document.getElementById("results").value = checkZones(mediainfo, frames, check);
+  } else {
+    document.getElementById("results").value = "";
+  }
 };
