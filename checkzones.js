@@ -27,12 +27,15 @@ function parseZones(zones, base, numframes) {
       return null;
     }
 
-    if (/^crf=/.test(zone[2])) {
-      var crf = zone[2].replace(/^crf=/, "");
-      frames.fill(["crf", crf], parseInt(zone[0]), parseInt(zone[1])+1);
-    } else if (/^b=/.test(zone[2])) {
-      var b = zone[2].replace(/^b=/, "");
-      frames.fill(["b", b], parseInt(zone[0]), parseInt(zone[1])+1);
+    // loop over each part of the zone
+    for (var j = 2; j < zone.length; j++) {
+      if (/^crf=/.test(zone[j])) {
+        var crf = zone[j].replace(/^crf=/, "");
+        frames.fill(["crf", crf], parseInt(zone[0]), parseInt(zone[1])+1);
+      } else if (/^b=/.test(zone[j])) {
+        var b = zone[j].replace(/^b=/, "");
+        frames.fill(["b", b], parseInt(zone[0]), parseInt(zone[1])+1);
+      }
     }
   }
 
